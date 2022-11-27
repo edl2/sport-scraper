@@ -16,7 +16,6 @@ category = 'https://methstreams.com/' + fat + '/'
 response = requests.get(category)
 description_regex = r"(?<=<a href=\')(.*)(?=' )"
 description = re.findall(description_regex, response.text, re.MULTILINE)
-print(description)
 questions = [
     inquirer.List('what',
                   message="Choose stream",
